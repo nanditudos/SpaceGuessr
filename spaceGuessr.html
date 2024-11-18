@@ -9,18 +9,139 @@
 <body>
   <header>
     <h1>SpaceGuessr</h1>
+	<a style="text-align:right" href="about.html">About</a>
   </header>
   <div class="container">
     <section class="options">
-      <h2>Options</h2>
-      <div class="checkbox-group">
-        <label><input type="checkbox" id="planets" checked> Planets (+Pluto)</label>
-        <label><input type="checkbox" id="moons1" checked> Large Moons</label>
-        <label><input type="checkbox" id="moons2"> Small Moons</label>
-        <label><input type="checkbox" id="rings"> Rings</label>
+      <button onclick='toggleOptions()'>Options</button>
+	  <div id="options_menu" style="display:none;">
+		  <div class="checkbox-group">
+			<label><input type="checkbox" id="_all" checked onclick='toggleCheckboxesInDiv("options_menu", this.checked)'> All</label>
+			<label><input type="checkbox" id="_planets" checked onclick='toggleCheckboxesInDiv("_planets_container", this.checked);document.getElementById("Pluto").checked=this.checked;'> Planets (+Pluto)</label>
+			<label><input type="checkbox" id="_moons1" checked onclick='toggleLargeMoons(this.checked)'> Large Moons</label>
+			<label><input type="checkbox" id="_rings"> Rings</label>
+		  </div>
+		  <h3>Planets</h3>
+		  <div class="checkbox-group" id="_planets_container">
+			<label><input type="checkbox" id="Venus" checked>  Venus</label>
+			<label><input type="checkbox" id="Earth" checked>  Earth</label>
+			<label><input type="checkbox" id="Mars" checked>  Mars</label>
+			<label><input type="checkbox" id="Jupiter" checked>  Jupiter</label>
+			<label><input type="checkbox" id="Saturn" checked>  Saturn</label>
+			<label><input type="checkbox" id="Uranus" checked>  Uranus</label>
+			<label><input type="checkbox" id="Neptune" checked>  Neptune</label>
+		  </div>
+		  <h3>Moons  <input type="checkbox" id="_moons" onclick='toggleCheckboxesInDiv("_moons_container", this.checked)'></h3>
+		  <span id="_moons_container">
+			<div class="checkbox-group" id="_earth_moons_container">
+			  <label><input type="checkbox" id="Moon" checked>  Moon</label>
+			</div>
+			<h4>Jupiter moons  <input type="checkbox" id="_jupiter_moons" onclick='toggleCheckboxesInDiv("_jupiter_moons_container", this.checked)'></h4>
+			<div id="_jupiter_moons_container">
+			  <label><input type="checkbox" id="Adrastea" >  Adrastea</label>
+			  <label><input type="checkbox" id="Amalthea" >  Amalthea</label>
+			  <label><input type="checkbox" id="Callirrhoe" >  Callirrhoe</label>
+			  <label><input type="checkbox" id="Callisto" checked>  Callisto</label>
+			  <label><input type="checkbox" id="Elara" >  Elara</label>
+			  <label><input type="checkbox" id="Europa" checked>  Europa</label>
+			  <label><input type="checkbox" id="Ganymede" checked>  Ganymede</label>
+			  <label><input type="checkbox" id="Himalia" >  Himalia</label>
+			  <label><input type="checkbox" id="Io" checked>  Io</label>
+			  <label><input type="checkbox" id="Metis" >  Metis</label>
+			  <label><input type="checkbox" id="Thebe" >  Thebe</label>
+			</div>
+			<h4>Saturn moons  <input type="checkbox" id="_saturn_moons" onclick='toggleCheckboxesInDiv("_saturn_moons_container", this.checked)'></h4>
+			<div id="_saturn_moons_container">
+			  <label><input type="checkbox" id="Aegaeon" >  Aegaeon</label>
+			  <label><input type="checkbox" id="Albiorix" >  Albiorix</label>
+			  <label><input type="checkbox" id="Anthe" >  Anthe</label>
+			  <label><input type="checkbox" id="Atlas" >  Atlas</label>
+			  <label><input type="checkbox" id="Bebhionn" >  Bebhionn</label>
+			  <label><input type="checkbox" id="Bergelmir" >  Bergelmir</label>
+			  <label><input type="checkbox" id="Bestla" >  Bestla</label>
+			  <label><input type="checkbox" id="Calypso" >  Calypso</label>
+			  <label><input type="checkbox" id="Daphnis" >  Daphnis</label>
+			  <label><input type="checkbox" id="Dione" >  Dione</label>
+			  <label><input type="checkbox" id="Enceladus" checked>  Enceladus</label>
+			  <label><input type="checkbox" id="Epimetheus" >  Epimetheus</label>
+			  <label><input type="checkbox" id="Erriapus" >  Erriapus</label>
+			  <label><input type="checkbox" id="Fornjot" >  Fornjot</label>
+			  <label><input type="checkbox" id="Greip" >  Greip</label>
+			  <label><input type="checkbox" id="Hati" >  Hati</label>
+			  <label><input type="checkbox" id="Helene" >  Helene</label>
+			  <label><input type="checkbox" id="Hyperion" >  Hyperion</label>
+			  <label><input type="checkbox" id="Hyrrokkin" >  Hyrrokkin</label>
+			  <label><input type="checkbox" id="Iapetus" checked>  Iapetus</label>
+			  <label><input type="checkbox" id="Ijiraq" >  Ijiraq</label>
+			  <label><input type="checkbox" id="Janus" >  Janus</label>
+			  <label><input type="checkbox" id="Jarnsaxa" >  Jarnsaxa</label>
+			  <label><input type="checkbox" id="Kari" >  Kari</label>
+			  <label><input type="checkbox" id="Kiviuq" >  Kiviuq</label>
+			  <label><input type="checkbox" id="Loge" >  Loge</label>
+			  <label><input type="checkbox" id="Methone" >  Methone</label>
+			  <label><input type="checkbox" id="Mimas" checked>  Mimas</label>
+			  <label><input type="checkbox" id="Mundilfari" >  Mundilfari</label>
+			  <label><input type="checkbox" id="Narvi" >  Narvi</label>
+			  <label><input type="checkbox" id="Paaliaq" >  Paaliaq</label>
+			  <label><input type="checkbox" id="Pallene" >  Pallene</label>
+			  <label><input type="checkbox" id="Pan" >  Pan</label>
+			  <label><input type="checkbox" id="Pandora" >  Pandora</label>
+			  <label><input type="checkbox" id="Phoebe" >  Phoebe</label>
+			  <label><input type="checkbox" id="Polydeuces" >  Polydeuces</label>
+			  <label><input type="checkbox" id="Prometheus" >  Prometheus</label>
+			  <label><input type="checkbox" id="Rhea" >  Rhea</label>
+			  <label><input type="checkbox" id="S/2004 S 12" >  S/2004 S 12</label>
+			  <label><input type="checkbox" id="S/2004 S 13" >  S/2004 S 13</label>
+			  <label><input type="checkbox" id="Siarnaq" >  Siarnaq</label>
+			  <label><input type="checkbox" id="Skathi" >  Skathi</label>
+			  <label><input type="checkbox" id="Skoll" >  Skoll</label>
+			  <label><input type="checkbox" id="Surtur" >  Surtur</label>
+			  <label><input type="checkbox" id="Suttungr" >  Suttungr</label>
+			  <label><input type="checkbox" id="Tarqeq" >  Tarqeq</label>
+			  <label><input type="checkbox" id="Tarvos" >  Tarvos</label>
+			  <label><input type="checkbox" id="Telesto" >  Telesto</label>
+			  <label><input type="checkbox" id="Tethys" checked>  Tethys</label>
+			  <label><input type="checkbox" id="Thrymr" >  Thrymr</label>
+			  <label><input type="checkbox" id="Titan" checked>  Titan</label>
+			  <label><input type="checkbox" id="Ymir" >  Ymir</label>
+			</div>
+			<h4>Uranus moons  <input type="checkbox" id="_uranus_moons" onclick='toggleCheckboxesInDiv("_uranus_moons_container", this.checked)'></h4>
+			<div id="_uranus_moons_container">
+			  <label><input type="checkbox" id="Ariel" checked>  Ariel</label>
+			  <label><input type="checkbox" id="Cupid" >  Cupid</label>
+			  <label><input type="checkbox" id="Mab" >  Mab</label>
+			  <label><input type="checkbox" id="Miranda" checked>  Miranda</label>
+			  <label><input type="checkbox" id="Oberon" checked>  Oberon</label>
+			  <label><input type="checkbox" id="Puck" >  Puck</label>
+			  <label><input type="checkbox" id="Titania" checked>  Titania</label>
+			  <label><input type="checkbox" id="Umbriel" checked>  Umbriel</label>
+			</div>
+			<h4>Neptune moons  <input type="checkbox" id="_neptune_moons" onclick='toggleCheckboxesInDiv("_neptune_moons_container", this.checked)'></h4>
+			<div id="_neptune_moons_container">
+			  <label><input type="checkbox" id="Larissa" >  Larissa</label>
+			  <label><input type="checkbox" id="Naiad" >  Naiad</label>
+			  <label><input type="checkbox" id="Nereid" >  Nereid</label>
+			  <label><input type="checkbox" id="Proteus" >  Proteus</label>
+			  <label><input type="checkbox" id="Thalassa" >  Thalassa</label>
+			  <label><input type="checkbox" id="Triton" checked>  Triton</label>
+			</div>
+			<h4>Pluto moons  <input type="checkbox" id="_pluto_moons" onclick='toggleCheckboxesInDiv("_pluto_moons_container", this.checked)'></h4>
+			<div id="_pluto_moons_container">
+			  <label><input type="checkbox" id="Charon" checked>  Charon</label>
+			  <label><input type="checkbox" id="Hydra" >  Hydra</label>
+			  <label><input type="checkbox" id="Kerberos">  Kerberos</label>
+			  <label><input type="checkbox" id="Nix">  Nix</label>
+			  <label><input type="checkbox" id="Styx">  Styx</label>
+			</div>
+		  </span>
+		  <h3>Dwarf Planets</h3>
+		  <div class="checkbox-group" id="_planets_container">
+		    <label><input type="checkbox" id="Pluto" checked>  Pluto</label>
+		  </div>
+		  <label><input type="checkbox" id="_balance" checked> Balance Drop Groups</label>
       </div>
-      <label><input type="checkbox" id="balance" checked> Balance Drop Groups</label>
-      <br>
+	  
+	  <br>
       <p id="output"></p>
       <label for="guess">Make your guess:</label>
       <div class="guess-section">

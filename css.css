@@ -56,7 +56,6 @@ header h1 {
 .checkbox-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
 }
 
 .checkbox-group label {

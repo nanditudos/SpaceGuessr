@@ -38,29 +38,7 @@ const rows = csvText.split('\n').map(row => row.split(','));
 let selectedImage;
     
 function newDrop() {
-	let dropGroups = [];
-	if (document.getElementById("planets").checked) {
-		dropGroups = dropGroups.concat(["Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune","Pluto"]);
-	}
-	if (document.getElementById("rings").checked) {
-		dropGroups = dropGroups.concat(["Jupiter Rings","Saturn Rings","Uranus Rings","Neptune Rings"]);
-	}
-	if (document.getElementById("moons1").checked) {
-		dropGroups = dropGroups.concat(["Moon","Ganymede","Io","Europa","Callisto"]);//Jupiter
-		dropGroups = dropGroups.concat(["Mimas","Enceladus","Titan","Tethys","Dione","Rhea","Iapetus"]);//Saturn
-		dropGroups = dropGroups.concat(["Titania","Ariel","Miranda","Umbriel","Oberon"]);//Uranus
-		dropGroups = dropGroups.concat(["Triton","Nereid","Charon"]);//Uranus, pluto
-	}
-	if (document.getElementById("moons2").checked) {
-		dropGroups = dropGroups.concat(["Adrastea","Amalthea","Callirrhoe","Elara","Himalia","Metis","Thebe"]);//Jupiter
-		dropGroups = dropGroups.concat(["Aegaeon","Albiorix","Anthe","Atlas","Bebhionn","Bergelmir","Bestla","Calypso","Daphnis","Epimetheus","Erriapus","Fornjot"]);//Saturn
-		dropGroups = dropGroups.concat(["Greip","Hati","Helene","Hyperion","Hyrrokkin","Ijiraq","Jarnsaxa","Kari","Kiviuq","Loge","Methone","Mundilfari"]);//Saturn
-		dropGroups = dropGroups.concat(["Narvi","Paaliaq","Pallene","Pan","Pandora","Phoebe","Polydeuces","Prometheus","S/2004 S 12","S/2004 S 13","Siarnaq","Skathi"]);//Saturn
-		dropGroups = dropGroups.concat(["Skoll","Surtur","Suttungr","Tarqeq","Tarvos","Telesto","Thrymr","Ymir"]);//Saturn
-		dropGroups = dropGroups.concat(["Cupid","Mab","Puck"]);//Uranus
-		dropGroups = dropGroups.concat(["Larissa","Naiad","Proteus","Thalassa"]);//Neptune
-		dropGroups = dropGroups.concat(["Hydra","Kerberos","Nix","Styx"]);//Pluto
-	}
+	let dropGroups = getDropGroups();
 	let groups = [];
 	for (let i=0; i<rows.length; i++) {
 		if (dropGroups.includes(rows[i][2])) {
@@ -68,7 +46,7 @@ function newDrop() {
 			
 		}
 	}
-	if (document.getElementById('balance').checked) {
+	if (document.getElementById('_balance').checked) {
 		let counts=[];
 		for (let i=0; i<dropGroups.length; i++) {
 			counts.push(0);
@@ -137,4 +115,42 @@ function checkguess() {
 	}
 	document.getElementById("imageMetadata").innerHTML="Spacecraft: "+selectedImage[5]+", Instrument: "+selectedImage[0];
 	document.getElementById("guessButton").innerHTML="Next!";
+}
+
+function toggleCheckboxesInDiv(divId, state) {
+  const container = document.getElementById(divId);
+  if (container) {
+	const checkboxes = container.querySelectorAll('input[type="checkbox"]');
+	checkboxes.forEach(checkbox => {
+	  checkbox.checked = state;
+	});
+	const nestedDivs = container.querySelectorAll('div');
+	nestedDivs.forEach(nestedDiv => {
+	  toggleCheckboxesInDiv(nestedDiv.id, state);
+	});
+  }
+}
+function getDropGroups() {
+	let out=[];
+	const container = document.getElementById("options_menu");
+	const checkboxes = container.querySelectorAll('input[type="checkbox"]');
+	checkboxes.forEach(checkbox => {
+	  if (checkbox.id[0]!='_'&&checkbox.checked) out.push(checkbox.id);
+	});
+	console.log(out);
+	return out;
+}
+
+function toggleLargeMoons(state) {
+	let largeMoons = ["Moon","Callisto","Io","Ganymede","Europa","Enceladus","Iapetus","Mimas","Tethys","Titan","Ariel","Miranda","Oberon","Titania","Umbriel","Triton","Charon"];
+	for (let i=0; i<largeMoons.length; i++) {
+		document.getElementById(largeMoons[i]).checked=state;
+	}
+}
+function toggleOptions() {
+	if (document.getElementById("options_menu").style.display=="none") {
+		document.getElementById("options_menu").style.display="block";
+	} else {
+		document.getElementById("options_menu").style.display="none";
+	}
 }
