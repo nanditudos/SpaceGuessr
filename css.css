@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Dark theme background and color */
+body {
+  background-color: #1c1c1e;
+  color: #f5f5f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  width: 100%;
+  background: #2c2c2e;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 2em;
+  color: #012FC0;
+  letter-spacing: 2px;
+}
+
+/* Main container */
+.container {
+  width: 90%;
+  max-width: 1300px;
+  padding: 2rem;
+  margin-top: 1.5rem;
+  background: #333333;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Options section */
+.options h2 {
+  margin-bottom: 1rem;
+  color: #012FC0;
+}
+.options, .game {
+  flex: 1;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 0.5rem;
+  accent-color: #012FC0;
+}
+
+/* Game section */
+.game label {
+  display: block;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.guess-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+select, button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background-color: #444;
+  color: #f5f5f7;
+}
+
+select:hover, button:hover {
+  background-color: #555;
+}
+
+button {
+  cursor: pointer;
+  background-color: #012FC0;
+  color: #f5f5f7;
+  border: none;
+}
+
+button:hover {
+  background-color: #e5c100;
+}
+
+/* Image display */
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex: 1
+  align-items: center;
+}
+
+#targetImg {
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+/* Result and metadata */
+#result, #imageMetadata {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #f7d51d;
+}

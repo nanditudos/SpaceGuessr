@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SpaceGuessr</title>
+  <script src="data.js"></script>
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+  <header>
+    <h1>SpaceGuessr</h1>
+  </header>
+  <div class="container">
+    <section class="options">
+      <h2>Options</h2>
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="planets" checked> Planets (+Pluto)</label>
+        <label><input type="checkbox" id="moons1" checked> Large Moons</label>
+        <label><input type="checkbox" id="moons2"> Small Moons</label>
+        <label><input type="checkbox" id="rings"> Rings</label>
+      </div>
+      <label><input type="checkbox" id="balance" checked> Balance Drop Groups</label>
+      <br>
+      <p id="output"></p>
+      <label for="guess">Make your guess:</label>
+      <div class="guess-section">
+        <select id="guess"></select>
+        <button id="guessButton" onclick="checkguess()">Start!</button>
+      </div>
+      <p id="result"></p>
+      <p id="imageMetadata"></p>
+    </section>
+    <section class="game">
+      <div class="image-container">
+        <img id="targetImg" height="700px;">
+      </div>
+    </section>
+  <script src="game.js"></script>
+</body>
+</html>
+
