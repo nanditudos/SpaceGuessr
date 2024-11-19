@@ -1,0 +1,9 @@
+Release (2024.nov.13.) (not public)
+-Added main functionality
+-Added basic groups
+Update 0.1 (2024.nov.18.)
+-More settings
+-About page
+Update 0.2
+-Added extra links support, with NASA links
+-Added version history file

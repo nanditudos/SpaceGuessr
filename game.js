@@ -100,6 +100,58 @@ function newDrop() {
 	}
 
 }
+let objectLink = [
+//NASA links
+{name:"Saturn",link:"https://science.nasa.gov/saturn/"},{name:"Venus",link:"https://science.nasa.gov/venus/"},
+{name:"Earth",link:"https://science.nasa.gov/earth/facts/"},{name:"Jupiter",link:"https://science.nasa.gov/jupiter/"},
+{name:"Uranus",link:"https://science.nasa.gov/uranus/"},{name:"Neptune",link:"https://science.nasa.gov/neptune/"},
+{name:"Mercury",link:"https://science.nasa.gov/mercury/"},{name:"Pluto",link:"https://science.nasa.gov/dwarf-planets/pluto/"},
+{name:"Mimas",link:"https://science.nasa.gov/saturn/moons/mimas/"},{name:"Enceladus",link:"https://science.nasa.gov/saturn/moons/enceladus/"},
+{name:"Tethys",link:"https://science.nasa.gov/saturn/moons/tethys/"},{name:"Dione",link:"https://science.nasa.gov/saturn/moons/dione/"},
+{name:"Rhea",link:"https://science.nasa.gov/saturn/moons/rhea/"},{name:"Titan",link:"https://science.nasa.gov/saturn/moons/titan/"},
+{name:"Hyperion",link:"https://science.nasa.gov/saturn/moons/hyperion/"},{name:"Iapetus",link:"https://science.nasa.gov/saturn/moons/iapetus/"},
+{name:"Phoebe",link:"https://science.nasa.gov/saturn/moons/phoebe/"},{name:"Janus",link:"https://science.nasa.gov/saturn/moons/janus/"},
+{name:"Epimetheus",link:"https://science.nasa.gov/saturn/moons/epimetheus/"},{name:"Helene",link:"https://science.nasa.gov/saturn/moons/helene/"},
+{name:"Telesto",link:"https://science.nasa.gov/saturn/moons/telesto/"},{name:"Calypso",link:"https://science.nasa.gov/saturn/moons/calypso/"},
+{name:"Atlas",link:"https://science.nasa.gov/saturn/moons/atlas/"},{name:"Prometheus",link:"https://science.nasa.gov/saturn/moons/prometheus/"},
+{name:"Pandora",link:"https://science.nasa.gov/saturn/moons/pandora/"},{name:"Pan",link:"https://science.nasa.gov/saturn/moons/pan"},
+{name:"Ymir",link:"https://science.nasa.gov/saturn/moons/ymir/"},{name:"Paaliaq",link:"https://science.nasa.gov/saturn/moons/paaliaq/"},
+{name:"Tarvos",link:"https://science.nasa.gov/saturn/moons/tarvos/"},{name:"Ijiraq",link:"https://science.nasa.gov/saturn/moons/ijiraq/"},
+{name:"Suttungr",link:"https://science.nasa.gov/saturn/moons/suttungr/"},{name:"Kiviuq",link:"https://science.nasa.gov/saturn/moons/kiviuq/"},
+{name:"Mundilfari",link:"https://science.nasa.gov/saturn/moons/mundilfari/"},{name:"Albiorix",link:"https://science.nasa.gov/saturn/moons/albiorix/"},
+{name:"Skathi",link:"https://science.nasa.gov/saturn/moons/skathi/"},{name:"Erriapus",link:"https://science.nasa.gov/saturn/moons/erriapus/"},
+{name:"Siarnaq",link:"https://science.nasa.gov/saturn/moons/siarnaq/"},{name:"Thrymr",link:"https://science.nasa.gov/saturn/moons/thrymyr/"},
+{name:"Narvi",link:"https://science.nasa.gov/saturn/moons/narvi/"},{name:"Methone",link:"https://science.nasa.gov/saturn/moons/methone/"},
+{name:"Pallene",link:"https://science.nasa.gov/saturn/moons/pallene/"},{name:"Polydeuces",link:"https://science.nasa.gov/saturn/moons/polydeuces/"},
+{name:"Daphnis",link:"https://science.nasa.gov/saturn/moons/daphnis/"},{name:"Aegir",link:"https://science.nasa.gov/saturn/moons/aegir/"},
+{name:"Bebhionn",link:"https://science.nasa.gov/saturn/moons/bebhionn/"},{name:"Bergelmir",link:"https://science.nasa.gov/saturn/moons/bergelmir/"},
+{name:"Bestla",link:"https://science.nasa.gov/saturn/moons/bestla/"},{name:"Farbauti",link:"https://science.nasa.gov/saturn/moons/farbauti/"},
+{name:"Fenrir",link:"https://science.nasa.gov/saturn/moons/fenrir/"},{name:"Fornjot",link:"https://science.nasa.gov/saturn/moons/fornjot/"},
+{name:"Hati",link:"https://science.nasa.gov/saturn/moons/hati/"},{name:"Hyrrokkin",link:"https://science.nasa.gov/saturn/moons/hyrrokkin/"},
+{name:"Kari",link:"https://science.nasa.gov/saturn/moons/kari/"},{name:"Loge",link:"https://science.nasa.gov/saturn/moons/loge/"},
+{name:"Skoll",link:"https://science.nasa.gov/saturn/moons/skoll/"},{name:"Surtur",link:"https://science.nasa.gov/saturn/moons/surtur/"},
+{name:"Anthe",link:"https://science.nasa.gov/saturn/moons/anthe/"},{name:"Jarnsaxa",link:"https://science.nasa.gov/saturn/moons/jarnsaxa/"},
+{name:"Greip",link:"https://science.nasa.gov/saturn/moons/greip/"},{name:"Tarqeq",link:"https://science.nasa.gov/saturn/moons/tarqeq/"},
+{name:"Aegaeon",link:"https://science.nasa.gov/saturn/moons/aegaeon/"},
+{name:"Ceres",link:"https://science.nasa.gov/dwarf-planets/ceres/"},{name:"Haumea",link:"https://science.nasa.gov/dwarf-planets/haumea/"},
+{name:"Makemake",link:"https://science.nasa.gov/dwarf-planets/makemake/"},{name:"Eris",link:"https://science.nasa.gov/dwarf-planets/eris/"},
+{name:"Ganymede",link:"https://science.nasa.gov/jupiter/moons/ganymede/"},{name:"Callisto",link:"https://science.nasa.gov/jupiter/moons/callisto/"},
+{name:"Io",link:"https://science.nasa.gov/jupiter/moons/io/"},{name:"Europa",link:"https://science.nasa.gov/jupiter/moons/europa/"},
+{name:"Miranda",link:"https://science.nasa.gov/uranus/moons/miranda/"},{name:"Ariel",link:"https://science.nasa.gov/uranus/moons/ariel/"},
+{name:"Umbriel",link:"https://science.nasa.gov/uranus/moons/umbriel/"},{name:"Titania",link:"https://science.nasa.gov/uranus/moons/titania/"},
+{name:"Oberon",link:"https://science.nasa.gov/uranus/moons/oberon/"},{name:"Triton",link:"https://science.nasa.gov/neptune/neptune-moons/triton"},
+{name:"Larissa",link:"https://science.nasa.gov/neptune/neptune-moons/larissa"},{name:"Naiad",link:"https://science.nasa.gov/neptune/neptune-moons/naiad"},
+{name:"Nereid",link:"https://science.nasa.gov/neptune/neptune-moons/nereid"},{name:"Proteus",link:"https://science.nasa.gov/neptune/neptune-moons/proteus"},
+{name:"Thalassa",link:"https://science.nasa.gov/neptune/neptune-moons/thalassa"},{name:"Puck",link:"https://science.nasa.gov/uranus/moons/puck/"},
+{name:"Mab",link:"https://science.nasa.gov/uranus/moons/mab/"},{name:"Cupid",link:"https://science.nasa.gov/uranus/moons/cupid/"},
+{name:"Charon",link:"https://science.nasa.gov/dwarf-planets/pluto/moons/charon/"},{name:"Nix",link:"https://science.nasa.gov/dwarf-planets/pluto/moons/nix/"},
+{name:"Hydra",link:"https://science.nasa.gov/dwarf-planets/pluto/moons/hydra/"},
+{name:"Kerberos",link:"https://science.nasa.gov/dwarf-planets/pluto/moons/kerberos/"},{name:"Styx",link:"https://science.nasa.gov/dwarf-planets/pluto/moons/styx/"},
+//wikipedia links
+//{name:"",link:""},{name:"",link:""},
+
+//OPUS links
+]
 function checkguess() {
 	if (document.getElementById("guessButton").innerHTML!="Guess!") {
 		newDrop();
@@ -112,6 +164,11 @@ function checkguess() {
 		document.getElementById("result").innerHTML="Correct.";
 	} else {
 		document.getElementById("result").innerHTML="Incorrect. "+selectedImage[2];
+	}
+	for (let i=0; i<objectLink.length; i++) {
+		if (objectLink[i].name==selectedImage[2]) {
+			document.getElementById("result").innerHTML+=" "+"<a href='"+objectLink[i].link+"'>(More)</a>";
+		}
 	}
 	document.getElementById("imageMetadata").innerHTML="Spacecraft: "+selectedImage[5]+", Instrument: "+selectedImage[0];
 	document.getElementById("guessButton").innerHTML="Next!";
